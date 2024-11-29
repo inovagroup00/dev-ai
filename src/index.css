@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 min-h-screen;
+    background-attachment: fixed;
+  }
+}
+
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-lg border border-white/10;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10;
+}
+
+@keyframes gradient-fade {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.gradient-blob {
+  position: absolute;
+  filter: blur(70px);
+  animation: gradient-fade 8s ease-in-out infinite;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
